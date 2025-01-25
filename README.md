@@ -1,4 +1,6 @@
-### kea development release container
+### Container for Kea development release
+
+https://github.com/isc-projects/kea
 
 Latest release
 
