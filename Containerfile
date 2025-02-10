@@ -1,5 +1,5 @@
 FROM alpine:latest
-ARG VERSION=2.7.5
+ARG VERSION=v2.7.5
 
 RUN set -x \
   \
@@ -17,7 +17,7 @@ RUN set -x \
   \
 ## build kea
   && cd / \
-  && wget -O kea.tar.gz https://github.com/isc-projects/kea/archive/refs/tags/Kea-$VERSION.tar.gz \
+  && wget -O kea.tar.gz https://github.com/isc-projects/kea/archive/refs/tags/Kea-$(echo -n $VERSION | tr -d 'v').tar.gz \
   && mkdir -p /usr/src/kea \
   && tar xf kea.tar.gz --strip-components=1 -C /usr/src/kea \
   && rm kea.tar.gz \
