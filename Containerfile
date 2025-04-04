@@ -1,4 +1,5 @@
 FROM alpine:latest
+ARG VERSION
 
 RUN set -x \
   \
@@ -17,8 +18,8 @@ RUN set -x \
   \
 ## build kea
   && cd / \
-  && VERSION_PATH=$(wget -O - https://api.github.com/repos/isc-projects/kea/git/refs/tags | jq -r 'last(.[] | select(.ref | startswith("refs/tags/Kea-"))).ref') \
-  && wget -O kea.tar.gz https://github.com/isc-projects/kea/archive/$VERSION_PATH.tar.gz \
+  # && VERSION=$(wget -O - https://api.github.com/repos/isc-projects/kea/git/refs/tags | jq -r 'last(.[] | select(.ref | startswith("refs/tags/Kea-"))).ref' | tr -d "ref/tags/Kea-") \
+  && wget -O kea.tar.gz https://github.com/isc-projects/kea/archive/refs/tags/Kea-$VERSION.tar.gz \
   && mkdir -p /usr/src/kea \
   && tar xf kea.tar.gz --strip-components=1 -C /usr/src/kea \
   && rm kea.tar.gz \
