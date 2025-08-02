@@ -11,4 +11,5 @@ RUN set -x \
     isc-kea-dhcp6 \
     isc-kea-hooks \
     isc-kea-dhcp-ddns \
-    isc-kea-ctrl-agent
+    isc-kea-ctrl-agent \
+    envsubst
