@@ -2,6 +2,10 @@
 
 https://github.com/isc-projects/kea
 
+Alpine package
+
+https://cloudsmith.io/~isc/repos/kea-dev/setup/#formats-alpine
+
 Latest release
 
 ```bash
